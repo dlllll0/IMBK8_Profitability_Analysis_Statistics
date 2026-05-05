@@ -1,15 +1,38 @@
 # IMBK8_Profitability_Analysis_Statistics  
   
-🏦 iM뱅크 중소기업 수익 세분화 및 고효율 '알짜' 고객 발굴  
-기존 안정성 중심의 기업 등급 체계를 보완하여, 기업의 활동성과 수익성을 입체적으로 평가하고 숨겨진 우량 고객(Hidden Star)을 발굴하는 통계 분석 프로젝트입니다.
+#### 🏦 iM뱅크 중소기업 수익 세분화 및 알짜 고객 발굴
+> **본 프로젝트는 iM뱅크(대구은행)의 기업 고객 데이터를 활용하여 활동성(FAI)과 수익성(FPI) 지수를 설계하고, 통계적 검증을 통해 기존 신용등급 체계에 가려진 고효율 '알짜' 고객을 발굴하는 통계 분석 기반 비즈니스 전략 프로젝트입니다.**[cite: 4]
   
-  
-  
-1. 프로젝트 배경 및 목적
-배경: 기존 신용등급은 부채비율, 연체율 등 '재무적 안정성'에 치중되어 있어, 성장기 중소기업의 역동적인 거래 활동이나 실제 수익 기여도를 포착하는 데 한계가 있음.  
 
-목적: 활동성(FAI) 및 수익성(FPI) 지수를 개발하여 중소기업 고객을 재세분화하고, 이를 바탕으로 맞춤형 마케팅 전략 수립을 위한 데이터 기반 가이드라인 제시.  
+  
+## 1. 프로젝트 개요
+- **배경** : 기존 신용등급은 부채비율, 연체율 등 '재무적 안정성'에 치중되어 있어, 성장기 중소기업의 역동적인 거래 활동이나 실제 수익 기여도를 포착하는 데 한계가 있음.  
+- **목적** : 활동성 및 수익성 기반의 보완 등급 체계 제안 및 숨은 우량 고객(Hidden Star) 식별
+- **기간** : 2026.03.17 ~ 2026.03.27
+- **주요 성과** : 
+    - FAI(활동성) 및 FPI(수익성) 하이브리드 세분화 모델 구축
+    - 기존 '일반' 등급 내 고수익 알짜 타겟 고객 **12,715명** 발굴 및 프로파일링 성공
+    - 비모수 검정을 통한 지수 축의 타당성 및 효율 역전 현상 통계적 입증 (p-value < 0.001)
+  
+  
+## 2. 기술 스택
 
+* **Language**
+    <br><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=whitehttps://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+
+* **Library**
+    * **Data & Statistical Analysis**
+        <br><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=whitehttps://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=whitehttps://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=whitehttps://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white"> <img src="https://img.shields.io/badge/Statsmodels-3776AB?style=for-the-badge&logo=python&logoColor=whitehttps://img.shields.io/badge/Statsmodels-3776AB?style=for-the-badge&logo=python&logoColor=white">
+    * **Visualization**
+        <br><img src="https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=matplotlib&logoColor=blackhttps://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=matplotlib&logoColor=black"> <img src="https://img.shields.io/badge/Seaborn-4479A1?style=for-the-badge&logo=python&logoColor=whitehttps://img.shields.io/badge/Seaborn-4479A1?style=for-the-badge&logo=python&logoColor=white">
+  
+  
+## 3. Data 정보
+### 데이터 구성
+- **규모**: iM뱅크 내부 법인 거래 데이터 및 거시 경제 지표 결합
+- **분석 대상**: 0원 ~ 5,000억 원 규모의 중소기업 집단 (이상치 분리 후)
+
+====
 2. 핵심 지수 설계 (Metric Design)
 모든 지표는 분포의 왜곡을 보정하기 위해 log1p 변환 후, MinMaxScaler(0~1)를 적용하여 결합되었습니다.  
 
